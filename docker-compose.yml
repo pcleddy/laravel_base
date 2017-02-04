@@ -5,6 +5,6 @@ services:
             context: ./
             dockerfile: app.docker
         volumes:
-            - ./:/usr/share/nginx/html
+            - ./:/var/www/html
         ports:
             - "80:80"
