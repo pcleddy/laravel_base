@@ -1,6 +1,6 @@
 version: '2'
 services:
-    app:
+    app01:
         build:
             context: ./
             dockerfile: app.docker
@@ -8,3 +8,15 @@ services:
             - ./:/var/www/html
         ports:
             - "80:80"
+
+    db01:
+      image: mysql
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: laravel
+        MYSQL_USER: homestead
+        MYSQL_PASSWORD: secret
+        MYSQL_DATABASE: homestead
+#      volumes:
+#        - ./migrations/mysql:/docker-entrypoint-initdb.d
