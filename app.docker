@@ -1,0 +1,9 @@
+FROM nginx
+
+RUN apt-get update
+RUN apt-get install -y nginx php5-fpm php5-cli php5-mcrypt git mlocate less vim
+RUN updatedb
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
